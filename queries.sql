@@ -56,4 +56,10 @@ from books ORDER BY book_title LIMIT 10,10
 
 
 -- 10. Using a subquery, retrieve all the book titles (`book_title`) and book years (`book_year`) from the `books` table that have the "Short Stories" category.
-
+SELECT `book_year
+`,`book_title`
+FROM `books`
+WHERE  category = "Short Stories"
+INNER JOIN category
+ON books.book_year = category.book_title
+GROUP BY book_title;
